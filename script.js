@@ -68,6 +68,19 @@ if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion
   });
 }
 
+// V6: single on-brand plus cursor. No trailing ring.
+if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.classList.add('custom-cursor');
+  const mark=document.createElement('div');
+  mark.className='cursor-mark';
+  document.body.appendChild(mark);
+  addEventListener('mousemove',e=>{mark.style.transform=`translate3d(${e.clientX}px,${e.clientY}px,0)`;});
+  document.querySelectorAll('a,button,input,.timeline-card,.feature-card,.choice-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+  });
+}
+
 // V4: private-work media slots. Drop correctly named files into /assets/private/.
 document.querySelectorAll('[data-image]').forEach(slot=>{
   const src=slot.dataset.image;
