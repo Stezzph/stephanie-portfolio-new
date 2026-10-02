@@ -66,3 +66,15 @@ document.querySelectorAll('[data-video]').forEach(slot=>{
   probe.onloadedmetadata=()=>{const v=document.createElement('video');v.src=src;v.controls=true;v.playsInline=true;v.preload='metadata';slot.prepend(v);slot.classList.add('has-media')};
   probe.src=src;
 });
+
+  
+// Homepage header: white on red hero, black once the page reaches white content.
+const homeHeaderState=()=>{
+  const hero=document.querySelector('.home-hero');
+  if(!hero || !document.body.classList.contains('home-clean')) return;
+  const threshold=Math.max(0,hero.offsetHeight-96);
+  document.body.classList.toggle('past-hero',window.scrollY>threshold);
+};
+addEventListener('scroll',homeHeaderState,{passive:true});
+addEventListener('resize',homeHeaderState);
+homeHeaderState();
