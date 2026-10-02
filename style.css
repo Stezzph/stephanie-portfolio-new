@@ -230,81 +230,105 @@ body.menu-open .site-header{
 }
 .home-hero-copy p:last-child{margin-bottom:0}
 
-/* HOME INTRO */
-.intro-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:64px;
-  align-items:start;
+/* HOME INTRO — based on original portfolio */
+.identity-section{
+  padding:92px 0 0;
+  background:#fff;
+  overflow:hidden;
 }
-.quote{
-  margin:0;
-  font-size:clamp(42px,5.3vw,68px);
-  line-height:.98;
-  letter-spacing:-.05em;
-}
-.highlight{background:linear-gradient(transparent 60%,var(--red) 60%)}
-.intro-copy{
-  max-width:600px;
-  font-size:22px;
-  color:var(--muted);
-}
-.intro-copy strong{color:var(--ink)}
-
-.about-split{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:690px;
-}
-.about-panel{
-  background:var(--red);
-  color:#fff;
-  padding:72px max(32px,calc((100vw - var(--max))/2 + 32px));
-  padding-right:64px;
-}
-.about-panel h2{
-  margin:0 0 44px;
-  color:#fff;
-  font-size:clamp(54px,6.5vw,84px);
+.identity-name{
+  margin:0 0 42px;
+  color:var(--red);
+  font-size:clamp(62px,7.8vw,108px);
   line-height:.9;
-  letter-spacing:-.06em;
+  letter-spacing:-.065em;
 }
-.fact{
-  padding:16px 0;
-  border-bottom:1px solid rgba(255,255,255,.42);
+.identity-grid{
+  display:grid;
+  grid-template-columns:1.03fr .97fr;
+  align-items:stretch;
+  min-height:640px;
 }
-.fact small{
-  display:block;
-  text-transform:uppercase;
-  letter-spacing:.17em;
-  opacity:.72;
-  font-weight:700;
+.identity-quote{
+  align-self:center;
+  position:relative;
+  z-index:2;
+  font-size:clamp(40px,5vw,67px);
+  line-height:1.04;
+  letter-spacing:-.055em;
+  font-weight:800;
 }
-.fact strong{
-  display:block;
-  margin-top:8px;
-  font-size:clamp(22px,2.4vw,30px);
+.identity-quote span{
+  display:inline;
+  background:var(--red);
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+  padding:0 .10em .03em;
 }
-.about-image{overflow:hidden;background:#111}
-.about-image img{
+.identity-image{
+  min-height:640px;
+  margin-left:-34px;
+  overflow:hidden;
+}
+.identity-image img{
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position:center;
   filter:grayscale(1);
-  transition:transform .6s var(--ease);
 }
-.about-image:hover img{transform:scale(1.025)}
 
-.section-title{
-  margin:10px 0 24px;
-  font-size:clamp(58px,7vw,92px);
-  line-height:.9;
+.about-editorial{
+  padding:80px 0 92px;
+  background:var(--red);
+  color:#fff;
+}
+.about-editorial-title{
+  margin:0 0 92px;
+  color:var(--cream);
+  font-size:clamp(76px,10vw,142px);
+  line-height:.82;
+  letter-spacing:-.07em;
+}
+.about-editorial-grid{
+  display:grid;
+  grid-template-columns:.86fr 1.14fr;
+  gap:80px;
+  align-items:start;
+}
+.about-facts .fact{
+  padding:18px 0 20px;
+  border-bottom:1px solid rgba(255,255,255,.46);
+}
+.about-facts .fact small{
+  display:block;
+  margin-bottom:10px;
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.about-facts .fact strong{
+  display:block;
+  color:#fff;
+  font-size:clamp(23px,2.4vw,32px);
+}
+.about-story{
+  max-width:650px;
+}
+.about-story h3{
+  margin:0 0 46px;
+  color:var(--cream);
+  font-size:clamp(45px,5.6vw,76px);
+  line-height:.98;
   letter-spacing:-.06em;
 }
-.section-copy{
-  max-width:760px;
-  font-size:24px;
-  color:var(--muted);
+.about-story p{
+  margin:0 0 30px;
+  color:#fff;
+  font-size:clamp(19px,1.8vw,24px);
+  line-height:1.46;
 }
 
 /* TIMELINE */
@@ -904,9 +928,15 @@ a,button{cursor:pointer}
   .home-hero-copy p{font-size:19px}
   .section{padding:76px 0}
   .section-sm{padding:54px 0}
-  .intro-grid,.about-split,.choice-grid,.case-head{grid-template-columns:1fr}
-  .about-image{min-height:520px}
-  .about-panel{padding:58px 22px}
+  .identity-section{padding-top:68px}
+  .identity-name{margin-bottom:30px}
+  .identity-grid{grid-template-columns:1fr;min-height:0}
+  .identity-quote{padding:16px 0 46px}
+  .identity-image{min-height:520px;margin-left:0}
+  .about-editorial{padding:64px 0 72px}
+  .about-editorial-title{margin-bottom:56px}
+  .about-editorial-grid,.choice-grid,.case-head{grid-template-columns:1fr}
+  .about-editorial-grid{gap:56px}
   .timeline{padding-left:54px}
   .timeline::before{left:15px}
   .timeline-dot{left:-52px;width:28px;height:28px}
