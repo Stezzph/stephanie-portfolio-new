@@ -52,35 +52,6 @@ document.querySelectorAll('.acc').forEach(btn=>btn.addEventListener('click',()=>
 })();
 
 
-// V4: subtle custom cursor for desktop only.
-if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.documentElement.classList.add('custom-cursor');
-  const dot=document.createElement('div');
-  const ring=document.createElement('div');
-  dot.className='cursor-dot'; ring.className='cursor-ring';
-  document.body.append(dot,ring);
-  let mx=-100,my=-100,rx=-100,ry=-100;
-  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate3d(${mx}px,${my}px,0)`;});
-  const animate=()=>{rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.transform=`translate3d(${rx}px,${ry}px,0)`;requestAnimationFrame(animate)}; animate();
-  document.querySelectorAll('a,button,input,.timeline-card').forEach(el=>{
-    el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
-  });
-}
-
-// V6: single on-brand plus cursor. No trailing ring.
-if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.documentElement.classList.add('custom-cursor');
-  const mark=document.createElement('div');
-  mark.className='cursor-mark';
-  document.body.appendChild(mark);
-  addEventListener('mousemove',e=>{mark.style.transform=`translate3d(${e.clientX}px,${e.clientY}px,0)`;});
-  document.querySelectorAll('a,button,input,.timeline-card,.feature-card,.choice-card').forEach(el=>{
-    el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
-  });
-}
-
 // V4: private-work media slots. Drop correctly named files into /assets/private/.
 document.querySelectorAll('[data-image]').forEach(slot=>{
   const src=slot.dataset.image;
