@@ -287,3 +287,67 @@ body.home-clean .site-header{display:none!important}
   .home-hero-copy h3{font-size:clamp(30px,9vw,46px);margin-bottom:34px}
   .home-hero-copy p{font-size:19px}
 }
+
+
+/* V9 — exact homepage correction from reference screenshot */
+.home-clean .home-hero{background:#ff2a23!important;color:#fff!important}
+.home-clean .home-hero-top{color:#fff!important}
+.home-clean .home-brand,
+.home-clean .home-menu-button{color:#fff!important}
+.home-clean .home-menu-button:before,
+.home-clean .home-menu-button:after{background:#fff!important}
+.home-clean .home-hero-title{
+  color:#fff!important;
+  -webkit-text-stroke:0!important;
+  text-shadow:none!important;
+  font-weight:900!important;
+}
+.home-clean .home-hero-media{
+  background:transparent!important;
+  box-shadow:none!important;
+  border-radius:50% / 42%!important;
+  overflow:hidden!important;
+}
+.home-clean .home-hero-media img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  filter:none!important;
+  opacity:1!important;
+}
+.home-clean .home-hero-copy,
+.home-clean .home-hero-copy h2,
+.home-clean .home-hero-copy h3,
+.home-clean .home-hero-copy p{
+  color:#fff!important;
+}
+
+/* No JS cursor / no extra plus */
+.cursor-dot,.cursor-ring,.cursor-mark{display:none!important}
+@media(pointer:fine){
+  html,body,a,button,input,.timeline-card,.feature-card,.choice-card{
+    cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath d='M5 4l17 10.5-7.5 1.6-3.2 7.4L5 4z' fill='%23ffffff' stroke='%23000000' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 5 4, auto!important;
+  }
+  a:hover,button:hover,.timeline-card:hover,.feature-card:hover,.choice-card:hover{
+    cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath d='M5 4l17 10.5-7.5 1.6-3.2 7.4L5 4z' fill='%23000000' stroke='%23ffffff' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 5 4, pointer!important;
+  }
+}
+
+/* Desktop proportions closer to screenshot */
+@media(min-width:851px){
+  .home-hero-top{min-height:110px!important}
+  .home-hero-title{
+    font-size:clamp(110px,13.2vw,205px)!important;
+    line-height:.8!important;
+    margin:54px 0 -18px!important;
+    white-space:nowrap!important;
+  }
+  .home-hero-media{
+    width:min(980px,96%)!important;
+    aspect-ratio:1.86/1!important;
+    margin:0 auto 90px!important;
+  }
+  .home-hero-copy{max-width:760px!important}
+}
