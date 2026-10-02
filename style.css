@@ -144,3 +144,19 @@ body.menu-open .site-header{color:white;background:transparent;border-color:tran
   .feature-card{min-height:340px;padding:30px}.cta{padding:40px 26px}
   .cursor-mark{display:none!important}
 }
+
+
+/* V7 — cleaner home + single custom cursor */
+body.home-clean .site-header{display:none!important}
+.home-clean .marquee{display:none!important}
+
+/* Single custom cursor: no red, no follower, no JS */
+@media(pointer:fine){
+  html,body,a,button,input,.timeline-card,.feature-card,.choice-card{
+    cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M4 3l16.5 10.2-7.2 1.5-3.1 7.1L4 3z' fill='%23ffffff' stroke='%23000000' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E") 4 3, auto!important;
+  }
+  a:hover,button:hover,.timeline-card:hover,.feature-card:hover,.choice-card:hover{
+    cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath d='M5 4l17 10.5-7.5 1.6-3.2 7.4L5 4z' fill='%23000000' stroke='%23ffffff' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 5 4, pointer!important;
+  }
+  .cursor-dot,.cursor-ring,.cursor-mark{display:none!important}
+}
