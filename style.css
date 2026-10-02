@@ -160,3 +160,130 @@ body.home-clean .site-header{display:none!important}
   }
   .cursor-dot,.cursor-ring,.cursor-mark{display:none!important}
 }
+
+
+/* V8 — homepage matched to Stephanie's original Squarespace look */
+.home-clean .hero.home-hero{
+  min-height:auto;
+  display:block;
+  background:var(--red);
+  color:var(--cream);
+  padding:0 0 78px;
+  overflow:hidden;
+}
+.home-hero-top{
+  width:min(var(--max),calc(100% - 68px));
+  margin:0 auto;
+  min-height:118px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  z-index:4;
+}
+.home-menu-button{
+  color:var(--cream)!important;
+  width:50px;
+  height:50px;
+}
+.home-menu-button:before,.home-menu-button:after{
+  background:currentColor!important;
+  width:30px;
+  left:10px;
+  top:24px;
+}
+.home-brand{
+  color:var(--cream);
+  font-weight:900;
+  font-size:clamp(24px,2.4vw,38px);
+  letter-spacing:-.055em;
+  position:relative;
+  z-index:4;
+}
+.home-hero-inner{
+  position:relative;
+}
+.home-hero-title{
+  color:var(--cream);
+  -webkit-text-stroke:0!important;
+  font-size:clamp(88px,13.5vw,190px);
+  line-height:.78;
+  letter-spacing:-.075em;
+  margin:40px 0 -8px;
+  position:relative;
+  z-index:3;
+  white-space:nowrap;
+}
+.home-hero-media{
+  width:min(980px,100%);
+  margin:0 0 82px;
+  aspect-ratio:1.78/1;
+  border-radius:50% / 42%;
+  overflow:hidden;
+  box-shadow:none;
+  position:relative;
+  z-index:2;
+}
+.home-hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:none!important;
+  transform:scale(1.015)!important;
+  transition:transform .8s var(--ease);
+}
+.home-hero-media:hover img{
+  filter:none!important;
+  transform:scale(1.045)!important;
+}
+.home-hero-copy{
+  max-width:900px;
+}
+.home-hero-copy h2{
+  margin:0;
+  color:var(--cream);
+  font-size:clamp(58px,8vw,106px);
+  line-height:.86;
+  letter-spacing:-.06em;
+}
+.home-hero-copy h3{
+  margin:8px 0 50px;
+  color:var(--cream);
+  font-size:clamp(36px,5vw,64px);
+  line-height:.95;
+  letter-spacing:-.055em;
+}
+.home-hero-copy p{
+  margin:0 0 30px;
+  max-width:760px;
+  color:var(--cream);
+  font-size:clamp(20px,2.2vw,31px);
+  line-height:1.32;
+}
+.home-hero-copy p:last-child{margin-bottom:0}
+
+.home-clean.menu-open .home-brand,
+.home-clean.menu-open .home-menu-button{color:white!important}
+
+@media(max-width:850px){
+  .home-hero-top{
+    width:calc(100% - 36px);
+    min-height:90px;
+  }
+  .home-brand{font-size:24px}
+  .home-menu-button{width:44px;height:44px}
+  .home-menu-button:before,.home-menu-button:after{left:8px;top:21px;width:28px}
+  .home-hero-title{
+    font-size:clamp(64px,20vw,108px);
+    margin:34px 0 -4px;
+    white-space:normal;
+  }
+  .home-hero-media{
+    aspect-ratio:1.45/1;
+    border-radius:50% / 42%;
+    margin-bottom:58px;
+  }
+  .home-hero-copy h2{font-size:clamp(52px,15vw,78px)}
+  .home-hero-copy h3{font-size:clamp(30px,9vw,46px);margin-bottom:34px}
+  .home-hero-copy p{font-size:19px}
+}
